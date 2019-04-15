@@ -11,8 +11,8 @@ import ObjectMapper
 
 enum ResponseSocket {
     
-    case success
-    case failure
+    case success(String)
+    case failure(String?)
 }
 
 class SocketProvider {
@@ -24,18 +24,6 @@ class SocketProvider {
     #endif
     
     var _socket: WebSocket?
-    var onTextCompletion: ((String) -> Void)? {
-        get {
-          return _socket?.onText
-        }
-        set {}
-    }
-    var onDisconnectCompletion: ((Error) -> Void)? {
-        get {
-            return _socket?.onDisconnect
-        }
-        set {}
-    }
     
     required init() {
         createSocketsCommunication()
@@ -44,14 +32,7 @@ class SocketProvider {
     private func createSocketsCommunication() {
         guard let url = URL(string: urlString) else { return }
         _socket = WebSocket(url: url)
-        clouserClient()
         _socket?.connect()
-    }
-    
-    private func clouserClient() {
-        _socket?.onConnect = {
-            print("connect")
-        }
     }
     
     private func write(_ json: [String: Any]) {
@@ -68,7 +49,17 @@ extension SocketProvider {
         return _socket?.isConnected ?? false
     }
     
-    func sendData(targetData: [String: Any]) {
-        write(targetData)
+    func sendMessage(JSON: [String: Any], completion: @escaping (ResponseSocket) -> Void) {
+        write(JSON)
+        _socket?.onText = { text in
+            return completion(.success(text))
+        }
+        _socket?.onDisconnect = { error in
+            return completion(.failure(error?.localizedDescription))
+        }
+    }
+    
+    func closeConndection() {
+        _socket?.disconnect()
     }
 }
