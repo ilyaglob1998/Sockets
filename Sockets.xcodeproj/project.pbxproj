@@ -13,6 +13,7 @@
 		0424640A2263328200B73FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042464092263328200B73FC7 /* Assets.xcassets */; };
 		0424640D2263328200B73FC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0424640B2263328200B73FC7 /* LaunchScreen.storyboard */; };
 		042464182263328200B73FC7 /* SocketsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042464172263328200B73FC7 /* SocketsTests.swift */; };
+		046614BF226478BB006852F2 /* ServiceCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046614BE226478BB006852F2 /* ServiceCompletion.swift */; };
 		046DBB3522636BBF00E08CFB /* AnyTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DBB3422636BBF00E08CFB /* AnyTarget.swift */; };
 		046DBB3722636BD900E08CFB /* SocketTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DBB3622636BD900E08CFB /* SocketTargetType.swift */; };
 		0489004A22633342008C180C /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0489004922633342008C180C /* ViewController.xib */; };
@@ -45,6 +46,7 @@
 		042464132263328200B73FC7 /* SocketsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocketsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		042464172263328200B73FC7 /* SocketsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketsTests.swift; sourceTree = "<group>"; };
 		042464192263328200B73FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046614BE226478BB006852F2 /* ServiceCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCompletion.swift; sourceTree = "<group>"; };
 		046DBB3422636BBF00E08CFB /* AnyTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTarget.swift; sourceTree = "<group>"; };
 		046DBB3622636BD900E08CFB /* SocketTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketTargetType.swift; sourceTree = "<group>"; };
 		0489004922633342008C180C /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			path = SocketsTests;
 			sourceTree = "<group>";
 		};
+		046614BD226478A4006852F2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				046614BE226478BB006852F2 /* ServiceCompletion.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		046DBB3322636BA200E08CFB /* SocketTargets */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 		04A95A0622641F1000453E11 /* SocketServices */ = {
 			isa = PBXGroup;
 			children = (
+				046614BD226478A4006852F2 /* Common */,
 				04A95A0422641EE900453E11 /* RegistrationService.swift */,
 			);
 			path = SocketServices;
@@ -392,6 +403,7 @@
 				041C044422637E3A00D84097 /* Model.swift in Sources */,
 				046DBB3522636BBF00E08CFB /* AnyTarget.swift in Sources */,
 				0489004F22633506008C180C /* SocketProvider.swift in Sources */,
+				046614BF226478BB006852F2 /* ServiceCompletion.swift in Sources */,
 				04A95A0522641EE900453E11 /* RegistrationService.swift in Sources */,
 				04A95A0822641FCE00453E11 /* SocketDelegateProtocol.swift in Sources */,
 				042464052263328100B73FC7 /* ViewController.swift in Sources */,

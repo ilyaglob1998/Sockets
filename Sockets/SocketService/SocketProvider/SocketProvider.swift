@@ -12,7 +12,7 @@ import ObjectMapper
 enum ResponseSocket {
     
     case success(String)
-    case failure(String?)
+    case failure(Error?)
 }
 
 class SocketProvider {
@@ -55,7 +55,7 @@ extension SocketProvider {
             return completion(.success(text))
         }
         _socket?.onDisconnect = { error in
-            return completion(.failure(error?.localizedDescription))
+            return completion(.failure(error))
         }
     }
     
